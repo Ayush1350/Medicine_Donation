@@ -1,10 +1,10 @@
-package com.example.loginsignupauth
+package com.example.MedicineDonationApp
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.loginsignupauth.databinding.ActivitySignupBinding
+import com.example.MedicineDonationApp.databinding.ActivitySignupBinding
 import com.google.firebase.auth.FirebaseAuth
 
 

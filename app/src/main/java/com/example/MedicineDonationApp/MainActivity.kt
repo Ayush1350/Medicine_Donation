@@ -1,4 +1,4 @@
-package com.example.loginsignupauth
+package com.example.MedicineDonationApp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -10,7 +10,7 @@
         android:id="@+id/pineLogo"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:src="@drawable/Flash_Screen"
+        android:src="@drawable/flashscreen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

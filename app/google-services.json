@@ -8,6 +8,35 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:847124960595:android:d0fe7e2a34d1fc9799bda6",
+        "android_client_info": {
+          "package_name": "com.example.MedicineDonationApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "847124960595-ga25qfto3bsfg44jfa906fbqdef34e3l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnxi3D0R6hQmvx_Qd3v8gdI6yV0N6MdUA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "847124960595-ga25qfto3bsfg44jfa906fbqdef34e3l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:847124960595:android:339f31b9c4b7fedb99bda6",
         "android_client_info": {
           "package_name": "com.example.loginsignupauth"
@@ -48,43 +77,6 @@
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.myapplication",
-            "certificate_hash": "6dddb09d1e8adf3540af9e59bcb44c065959d21a"
-          }
-        },
-        {
-          "client_id": "847124960595-ga25qfto3bsfg44jfa906fbqdef34e3l.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCnxi3D0R6hQmvx_Qd3v8gdI6yV0N6MdUA"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "847124960595-ga25qfto3bsfg44jfa906fbqdef34e3l.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:847124960595:android:0398f432e0920b0b99bda6",
-        "android_client_info": {
-          "package_name": "com.example.myapplication7"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "847124960595-engq7kro4s4rjtrrtc9s02muhicdgs50.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.myapplication7",
             "certificate_hash": "6dddb09d1e8adf3540af9e59bcb44c065959d21a"
           }
         },

@@ -1,4 +1,4 @@
-package com.example.loginsignupauth
+package com.example.MedicineDonationApp
 
 import android.content.Intent
 import android.graphics.drawable.ColorDrawable
@@ -9,7 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import com.example.loginsignupauth.databinding.ActivityLoginBinding
+import com.example.MedicineDonationApp.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 
 

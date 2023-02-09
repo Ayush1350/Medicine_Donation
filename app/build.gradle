@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.loginsignupauth'
+    namespace 'com.example.MedicineDonationApp'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.loginsignupauth"
+        applicationId "com.example.MedicineDonationApp"
         minSdk 24
         targetSdk 33
         versionCode 1
