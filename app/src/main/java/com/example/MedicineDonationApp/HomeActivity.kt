@@ -4,11 +4,14 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.MedicineDonationApp.databinding.ActivityHistoryBinding
 import com.example.MedicineDonationApp.databinding.ActivityHomeBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
+    private lateinit var bottomNavigation: BottomNavigationView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
@@ -20,16 +23,22 @@ class HomeActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.bottomNavigationView.selectedItemId = R.id.history
-        binding.bottomNavigationView.setOnItemSelectedListener {it
+
+        binding.bottomNavigationView.selectedItemId = R.id.home
+        binding.bottomNavigationView.selectedItemId = R.id.location
+        binding.bottomNavigationView.selectedItemId = R.id.person
+        binding.bottomNavigationView.setOnItemSelectedListener { it ->
             when (it.itemId) {
                 R.id.history -> {
-                    Intent(this, HistoryActivity::class.java).also{ startActivity(it) }
+                    Intent(this, HistoryActivity::class.java).also {
+                        startActivity(it) }
                 }
             }
             return@setOnItemSelectedListener true
-
         }
+
+
+
         binding.bottomNavigationView.selectedItemId = R.id.location
         binding.bottomNavigationView.setOnItemSelectedListener {it
             when (it.itemId) {
