@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -10,10 +16,17 @@
         android:label="MedicineDonationApp"
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginSignupAuth"
+
         tools:targetApi="31">
         <activity
-            android:name=".OptionActivity"
+            android:name=".HistoryActivity"
             android:exported="false" />
+        <activity
+            android:name=".HomeNActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OptionActivity"
+            android:exported="true" />
         <activity
             android:name=".HomeActivity"
             android:exported="true" />
