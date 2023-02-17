@@ -4,10 +4,15 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.example.MedicineDonationApp.databinding.ActivityHomeBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeActivity : AppCompatActivity() {
+
+
+
 
     lateinit var viewPager: ViewPager
     lateinit var viewPagerAdapter: ViewPagerAdapter
@@ -30,37 +35,32 @@ class HomeActivity : AppCompatActivity() {
 //......................................................UPLOAD ACTIVITY.......................................................//
 
         binding.Donate.setOnClickListener {
-            val intent = Intent (this,UploadActivity::class.java)
+            val intent = Intent(this, UploadActivity::class.java)
             startActivity(intent)
         }
 
 //......................................................HISTORY ACTIVITY.......................................................//
 
-        binding.bottomNavigationView.selectedItemId = R.id.history
-        binding.bottomNavigationView.setOnItemSelectedListener {it
-            when (it.itemId) {
-                R.id.history -> {
-                    Intent(this, HistoryActivity::class.java).also{ startActivity(it) }
+
+        binding.bottomNavigationView.setOnItemSelectedListener {
+
+            when(it.itemId){
+
+                R.id.home -> replaceFragment(HomeFragment())
+                R.id.history -> replaceFragment(HistoryFragment())
+                R.id.person -> replaceFragment(ProfileFragment())
+
+                else ->{
                 }
             }
-            return@setOnItemSelectedListener true
+            true
         }
-//......................................................LOCATION ACTIVITY.......................................................//
-
-        binding.bottomNavigationView.selectedItemId = R.id.location
-        binding.bottomNavigationView.setOnItemSelectedListener {it
-            when (it.itemId) {
-                R.id.location -> {
-                    val gmmIntentUri = Uri.parse("geo:0,0?q=NGO near me")
-                    val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
-                    mapIntent.setPackage("com.google.android.apps.maps")
-                    startActivity(mapIntent)
-                }
-            }
-            return@setOnItemSelectedListener true
-
-        }
-
     }
+    private fun replaceFragment(fragment : Fragment){
 
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.frame_layout,fragment)
+        fragmentTransaction.commit()
+        }
 }
