@@ -9,7 +9,7 @@ import android.widget.RelativeLayout
 import androidx.viewpager.widget.PagerAdapter
 import java.util.*
 
-class ViewPagerAdapter(val context: Context, val imageList: List<Int>) : PagerAdapter() {
+class ViewPagerAdapter(val context: HomeActivity, val imageList: List<Int>) : PagerAdapter() {
     override fun getCount(): Int {
         return imageList.size
     }
