@@ -14,5 +14,7 @@
     <color name="Blue">#3aa8c1</color>
     <color name="red">#c70000</color>
     <color name="green">#FF286CB5</color>
+    <color name="colorPrimaryDark">#000</color>
+    <color name="colorAccent">#03DAC5</color>
 
 </resources>
