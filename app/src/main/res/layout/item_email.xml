@@ -36,7 +36,7 @@
 
 
         </LinearLayout>
-        <TextView
+        <EditText
             android:text="admin@gmail.com"
             android:textStyle="bold"
             android:textColor="@color/black"
