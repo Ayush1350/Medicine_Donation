@@ -121,18 +121,10 @@
 
                 </LinearLayout>
 
-                <Button
-                    android:id="@+id/pickImageButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp"
-                    android:text="Upload"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView"
-                    app:layout_constraintStart_toStartOf="@+id/imageView"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
                 <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/profileImage"
+                    android:clickable="true"
+                    android:contentDescription="Image"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center"

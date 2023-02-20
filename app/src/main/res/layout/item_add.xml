@@ -88,7 +88,7 @@
                     android:gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
-                <TextView
+                <EditText
                     android:text="Rameshwar soc \n Ganpatimandir Road \n Mahavirnagar \n 383001"
                     android:textSize="13sp"
                     android:textColor="#ED5E5E5E"
