@@ -21,7 +21,7 @@ class OptionActivity : AppCompatActivity() {
             startActivity(intent)
         }
         Ngo.setOnClickListener {
-            val intent = Intent (this , LoginActivity::class.java)
+            val intent = Intent (this , HomeNActivity::class.java)
             startActivity(intent)
         }
     }
