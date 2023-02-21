@@ -139,10 +139,11 @@
             <Button
                 android:id="@+id/Donate"
                 android:layout_width="190dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="80dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="105dp"
                 android:layout_marginTop="675dp"
                 android:text="Donate Now"
+                android:scaleType="fitCenter"
                 android:textSize="18sp"
                 app:cornerRadius="30dp"/>
 
