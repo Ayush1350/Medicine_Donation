@@ -18,7 +18,7 @@
             android:layout_marginTop="320dp"
             android:padding="20dp">
             <EditText
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:id="@+id/signup_email"
                 android:layout_marginTop="30dp"
@@ -29,7 +29,7 @@
                 android:drawablePadding="8dp"
                 android:textColor="@color/grey"/>
             <EditText
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:id="@+id/signup_password"
                 android:layout_marginTop="20dp"
@@ -41,7 +41,7 @@
                 android:drawablePadding="8dp"
                 android:textColor="@color/grey"/>
             <EditText
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:id="@+id/signup_confirm"
                 android:layout_marginTop="20dp"
@@ -53,7 +53,7 @@
                 android:drawablePadding="8dp"
                 android:textColor="@color/grey"/>
             <Button
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_marginTop="30dp"
                 android:text="Sign Up"

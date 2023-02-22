@@ -1,15 +1,11 @@
 package com.example.MedicineDonationApp
 
 import android.content.Intent
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.view.GravityCompat
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.example.MedicineDonationApp.databinding.ActivityHomeBinding
-import com.google.android.material.navigation.NavigationView
 
 class HomeActivity : AppCompatActivity() {
 
