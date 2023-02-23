@@ -19,56 +19,49 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        loadFragment(HomeFragment())
 
-//......................................................IMAGE SLIDER.......................................................//
-
-        viewPager = findViewById(R.id.idViewPager)
-        imageList = ArrayList<Int>()
-        imageList = imageList + R.drawable.img
-        imageList = imageList + R.drawable.img_1
-        viewPagerAdapter = ViewPagerAdapter(this@HomeActivity, imageList)
-        viewPager.adapter = viewPagerAdapter
 
 //......................................................UPLOAD ACTIVITY.......................................................//
 
-        binding.Donate.setOnClickListener {
+
+       /* binding.Donate.setOnClickListener {
             val intent = Intent(this, UploadActivity::class.java)
             startActivity(intent)
-        }
+        }*/
 
-//......................................................HISTORY ACTIVITY.......................................................//
+
+//......................................................BOTTOM NAVIGATION.......................................................//
+
 
         binding.bottomNavigationView.setOnItemSelectedListener {
-            when(it.itemId){
-
-                R.id.person -> replaceFragment(ProfileFragment())
-                R.id.history -> replaceFragment(HistoryFragment())
-
-                else ->{
-
-                    binding.bottomNavigationView.setOnItemSelectedListener { it
-
-                        when (it.itemId) {
-                            R.id.home -> {
-                                Intent(this, HomeActivity::class.java).also{ startActivity(it) }
-                            }
-                        }
-                        return@setOnItemSelectedListener true
-                    }
-
+            when (it.itemId) {
+                R.id.home -> {
+                    loadFragment(HomeFragment())
+                    true
+                }
+                R.id.home -> {
+                    loadFragment(HomeFragment())
+                    true
+                }
+                R.id.person -> {
+                    loadFragment(ProfileFragment())
+                    true
+                }
+                R.id.history -> {
+                    loadFragment(HistoryFragment())
+                    true
+                }
+                else-> {
+                    false
                 }
             }
-            true
         }
     }
-    private fun replaceFragment(fragment : Fragment){
-
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.frame_layout,fragment)
-        fragmentTransaction.commit()
-
-
-
+    private  fun loadFragment(fragment: Fragment){
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.frame_layout,fragment)
+        transaction.commit()
     }
+
 }
