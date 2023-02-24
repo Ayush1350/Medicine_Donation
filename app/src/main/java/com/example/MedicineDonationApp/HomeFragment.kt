@@ -1,5 +1,6 @@
 package com.example.MedicineDonationApp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -44,18 +45,12 @@ class HomeFragment : Fragment() {
             fragmentTransaction?.commit()*/
 
             Donate.setOnClickListener {
-                val uploadFragment = UploadFragment()
-                val fragmentTransaction = activity?.supportFragmentManager?.beginTransaction()
-                fragmentTransaction?.replace(R.id.homefragment, uploadFragment)
-                fragmentTransaction?.addToBackStack(null)
-                fragmentTransaction?.commit()
+                val intent = Intent(context, UploadActivity::class.java)
+                startActivity(intent)
             }
         }
     }
 
-private fun FragmentTransaction?.replace(homefragment: Int, uploadFragment: UploadFragment) {
-    TODO("Not yet implemented")
-}
 
 
 
