@@ -3,6 +3,7 @@ package com.example.MedicineDonationApp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.example.MedicineDonationApp.databinding.ActivityHomeBinding
@@ -22,13 +23,9 @@ class HomeActivity : AppCompatActivity() {
         loadFragment(HomeFragment())
 
 
-//......................................................UPLOAD ACTIVITY.......................................................//
+//......................................................LOCATION ACTIVITY.......................................................//
 
 
-       /* binding.Donate.setOnClickListener {
-            val intent = Intent(this, UploadActivity::class.java)
-            startActivity(intent)
-        }*/
 
 
 //......................................................BOTTOM NAVIGATION.......................................................//
@@ -52,6 +49,11 @@ class HomeActivity : AppCompatActivity() {
                     loadFragment(HistoryFragment())
                     true
                 }
+                R.id.location -> {
+                    loadFragment(LocationFragment())
+                    true
+                }
+
                 else-> {
                     false
                 }
