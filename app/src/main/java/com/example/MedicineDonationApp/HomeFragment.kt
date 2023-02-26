@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.FragmentTransaction
+import androidx.viewpager.widget.ViewPager
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -23,6 +24,9 @@ class HomeFragment : Fragment() {
 
     // UI Components
     private lateinit var Donate: Button
+    lateinit var viewPager: ViewPager
+    lateinit var viewPagerAdapter: ViewPagerAdapter
+    lateinit var imageList: List<Int>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
