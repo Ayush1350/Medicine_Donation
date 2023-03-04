@@ -10,7 +10,7 @@ import androidx.viewpager.widget.PagerAdapter
 import java.util.*
 
 class ViewPagerAdapter(val context: HomeActivity, val imageList: List<Int>) : PagerAdapter() {
-    override fun getCount(): Int {
+    /*override fun getCount(): Int {
         return imageList.size
     }
     override fun isViewFromObject(view: View, `object`: Any): Boolean {
@@ -28,5 +28,28 @@ class ViewPagerAdapter(val context: HomeActivity, val imageList: List<Int>) : Pa
     override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
 
         container.removeView(`object` as RelativeLayout)
+    }*/
+    private val images = listOf(
+        R.drawable.img,
+        R.drawable.img_1
+    )
+
+    override fun instantiateItem(container: ViewGroup, position: Int): Any {
+        val imageView = ImageView(context)
+        imageView.setImageResource(images[position])
+        container.addView(imageView)
+        return imageView
+    }
+
+    override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
+        container.removeView(`object` as ImageView)
+    }
+
+    override fun getCount(): Int {
+        return images.size
+    }
+
+    override fun isViewFromObject(view: View, `object`: Any): Boolean {
+        return view == `object`
     }
 }
