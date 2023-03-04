@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.FragmentTransaction
 import androidx.viewpager.widget.ViewPager
+import com.google.android.material.tabs.TabLayout
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,12 +29,15 @@ class HomeFragment : Fragment() {
     lateinit var viewPagerAdapter: ViewPagerAdapter
     lateinit var imageList: List<Int>
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+
+    private lateinit var indicator: TabLayout
+
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val view = inflater.inflate(R.layout.fragment_home, container, false)
+        val viewPager = view.findViewById<ViewPager>(R.id.idViewPager)
+        viewPager.adapter = ImageSliderAdapter(requireContext())
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

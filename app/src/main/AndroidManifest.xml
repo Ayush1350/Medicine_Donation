@@ -12,7 +12,7 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_logo"
-        android:label="MedicineDonationApp"
+        android:label=""
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginSignupAuth"
         tools:targetApi="31">
