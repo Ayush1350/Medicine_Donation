@@ -122,7 +122,7 @@
 
                 </LinearLayout>
 
-                <androidx.appcompat.widget.AppCompatImageView
+                <pl.droidsonroids.gif.GifImageView
                     android:id="@+id/profileImage"
                     android:contentDescription="Upload"
                     android:clickable="true"
@@ -132,7 +132,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
                     android:src="@drawable/uploadprofileimage"
-                    app:srcCompat="@color/black" />
+                    app:srcCompat="@color/black"/>
 
             </androidx.cardview.widget.CardView>
         </RelativeLayout>
