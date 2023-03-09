@@ -39,7 +39,7 @@ class HistoryActivity: AppCompatActivity() {
 
         GetImages.setOnClickListener {
             val db = FirebaseFirestore.getInstance()
-            val imagesRef = db.collection("images")
+            val imagesRef = db.collection("Donatae Medicine Images")
 
             imagesRef.get().addOnSuccessListener { result ->
                 for (document in result) {

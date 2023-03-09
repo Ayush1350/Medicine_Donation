@@ -1,15 +1,15 @@
 package com.example.MedicineDonationApp
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.google.firebase.storage.StorageReference
 
 
-class ImageAdapter(private val imageList: ArrayList<String>, private val context: Context) :
+class ImageAdapter(private val imageList: MutableList<StorageReference>) :
     RecyclerView.Adapter<ImageAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item, parent, false)

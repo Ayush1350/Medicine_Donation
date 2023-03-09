@@ -76,7 +76,7 @@ class UploadActivity : AppCompatActivity() {
         FirebaseDatabase.getInstance().getReference("Donation List").child(currentDate)
             .setValue(dataClass).addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(this@UploadActivity, "Donated Successfully", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@UploadActivity, "Thank You For Donation!!!", Toast.LENGTH_SHORT).show()
                     finish()
                 }
             }.addOnFailureListener { e ->

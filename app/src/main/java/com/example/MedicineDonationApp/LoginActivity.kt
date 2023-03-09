@@ -1,7 +1,9 @@
 package com.example.MedicineDonationApp
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.drawable.ColorDrawable
+import android.net.ConnectivityManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
@@ -16,6 +18,18 @@ import com.google.firebase.auth.FirebaseAuth
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var firebaseAuth: FirebaseAuth
+
+    fun isNetworkAvailable(): Boolean {
+        val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val activeNetworkInfo = connectivityManager.activeNetworkInfo
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected
+
+        if (!isNetworkAvailable()) {
+            Toast.makeText(this, "Please Connect Internet", Toast.LENGTH_SHORT).show()
+        }
+
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
