@@ -12,7 +12,6 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" >
 
-
         <RelativeLayout
             android:id="@+id/my_drawer_layout"
             android:layout_width="match_parent"
@@ -25,7 +24,7 @@
                 android:id="@+id/topnavigation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:menu="@menu/top_navigation">
+                app:menu="@menu/nav_menu">
 
 
                 <TextView

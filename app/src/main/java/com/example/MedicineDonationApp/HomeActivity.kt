@@ -3,7 +3,10 @@ package com.example.MedicineDonationApp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.Button
+import android.widget.Toolbar
+import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.example.MedicineDonationApp.databinding.ActivityHomeBinding
@@ -24,6 +27,8 @@ class HomeActivity : AppCompatActivity() {
 
 
 //......................................................LOCATION ACTIVITY.......................................................//
+
+
 
 
 
