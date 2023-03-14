@@ -1,8 +1,14 @@
 package com.example.MedicineDonationApp
 
+import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
+import android.widget.DatePicker
+import android.widget.TextView
+import android.widget.TimePicker
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -12,13 +18,17 @@ import com.example.MedicineDonationApp.databinding.ActivityUploadBinding
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import java.text.DateFormat
+import java.text.SimpleDateFormat
 import java.util.*
 
-class UploadActivity : AppCompatActivity() {
+class UploadActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
 
     private lateinit var binding: ActivityUploadBinding
     var imageURL: String? = null
     var uri: Uri? = null
+
+    private val calendar = Calendar.getInstance()
+    private val formatter = SimpleDateFormat("MMMM d, yyyy hh:mm:ss a", Locale.US)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +53,16 @@ class UploadActivity : AppCompatActivity() {
         binding.saveButton.setOnClickListener {
             saveData()
         }
+
+        findViewById<TextView>(R.id.uploadPriority).setOnClickListener {
+            DatePickerDialog(
+                this,
+                this,
+                calendar.get(Calendar.YEAR),
+                calendar.get(Calendar.MONTH),
+                calendar.get(Calendar.DAY_OF_MONTH)
+            ).show()
+        }
     }
     private fun saveData(){
         val storageReference = FirebaseStorage.getInstance().reference.child("Donatae Medicine Images")
@@ -64,6 +84,31 @@ class UploadActivity : AppCompatActivity() {
         }.addOnFailureListener {
             dialog.dismiss()
         }
+    }
+
+    override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
+        calendar.set(year, month, dayOfMonth)
+        displayFormattedDate(calendar.timeInMillis)
+        TimePickerDialog(
+            this,
+            this,
+            calendar.get(Calendar.HOUR_OF_DAY),
+            calendar.get(Calendar.MINUTE),
+            false
+        ).show()
+    }
+
+    override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
+        calendar.apply {
+            set(Calendar.HOUR_OF_DAY, hourOfDay)
+            set(Calendar.MINUTE, minute)
+        }
+        displayFormattedDate(calendar.timeInMillis)
+    }
+
+    private fun displayFormattedDate(timestamp: Long) {
+        findViewById<TextView>(R.id.uploadPriority).text = formatter.format(timestamp)
+        Log.i("Formatting", timestamp.toString())
     }
     private fun uploadData(){
         val title = binding.uploadTitle.text.toString()

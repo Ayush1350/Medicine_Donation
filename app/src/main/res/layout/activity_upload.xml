@@ -56,7 +56,8 @@
                 android:background="@drawable/lavender_border"
                 android:layout_marginTop="20dp"
                 android:padding="16dp"
-                android:hint="...."
+                android:hint="Select Expiry Date"
+                android:focusable="false"
                 android:gravity="start|center_vertical"
                 android:textColor="@color/lavender"/>
             <Button
