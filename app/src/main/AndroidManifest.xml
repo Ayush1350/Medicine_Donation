@@ -42,7 +42,7 @@
             android:name=".HistoryActivity"
             android:exported="true" />
         <activity
-            android:name=".HomeNActivity"
+            android:name=".HomeNGOActivity"
             android:exported="false" />
         <activity
             android:name=".OptionActivity"

@@ -21,14 +21,14 @@ import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
 
-class UploadActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
+class UploadActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
 
     private lateinit var binding: ActivityUploadBinding
     var imageURL: String? = null
     var uri: Uri? = null
 
     private val calendar = Calendar.getInstance()
-    private val formatter = SimpleDateFormat("MMMM d, yyyy hh:mm:ss a", Locale.US)
+    private val formatter = SimpleDateFormat("MMMM d, yyyy", Locale.US)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -88,21 +88,6 @@ class UploadActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener, 
 
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
         calendar.set(year, month, dayOfMonth)
-        displayFormattedDate(calendar.timeInMillis)
-        TimePickerDialog(
-            this,
-            this,
-            calendar.get(Calendar.HOUR_OF_DAY),
-            calendar.get(Calendar.MINUTE),
-            false
-        ).show()
-    }
-
-    override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
-        calendar.apply {
-            set(Calendar.HOUR_OF_DAY, hourOfDay)
-            set(Calendar.MINUTE, minute)
-        }
         displayFormattedDate(calendar.timeInMillis)
     }
 
