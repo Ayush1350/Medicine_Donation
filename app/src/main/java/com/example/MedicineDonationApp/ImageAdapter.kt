@@ -1,36 +1,30 @@
 package com.example.MedicineDonationApp
 
-import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.google.firebase.storage.StorageReference
 
 
-class ImageAdapter(private val imageList: MutableList<StorageReference>) :
-    RecyclerView.Adapter<ImageAdapter.ViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item, parent, false)
-        return ViewHolder(view)
+class ImageAdapter(private val imageList: List<String>) : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.activity_home_ngo, parent, false)
+        return ImageViewHolder(itemView)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        // loading the images from the position
-        Glide.with(holder.itemView.context).load(imageList[position]).into(holder.imageView)
+    override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
+        val imageUrl = imageList[position]
+        Glide.with(holder.imageView.context)
+            .load(imageUrl)
+            .into(holder.imageView)
     }
 
-    override fun getItemCount(): Int {
-        return imageList.size
-    }
+    override fun getItemCount() = imageList.size
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var imageView: ImageView
-
-        init {
-            imageView = itemView.findViewById(R.id.item)
-        }
+    class ImageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val imageView: ImageView = itemView.findViewById(R.id.imageView)
     }
 }
